@@ -71,6 +71,7 @@ int main() {
   dens2 = (float)populacao2 / area2;
   ppc2  = pib2 / (double)populacao2;
   super2 = (double)populacao2 + (double)area2 + pib2 + (double)pontos2 + ppc2;
+
   // Área para exibição dos dados da cidade
   printf("\n==============================\n");
   printf("        RESULTADOS\n");
@@ -104,16 +105,47 @@ int main() {
   printf("        COMPARACAO\n");
   printf("==============================\n");
 
-  printf("Populacao: %s\n", (populacao1 > populacao2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
-  printf("Area: %s\n", (area1 > area2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
-  printf("PIB: %s\n", (pib1 > pib2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
-  printf("Pontos turisticos: %s\n", (pontos1 > pontos2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
-  printf("Densidade: %s\n", (dens1 > dens2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
-  printf("PIB per capita: %s\n", (ppc1 > ppc2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
-  printf("Super poder: %s\n", (super1 > super2) ? "Carta 1 vence" : "Carta 2 vence ou empata");
+  if (populacao1 > populacao2) {
+    printf("Populacao: Carta 1 vence\n");
+  } else {
+    printf("Populacao: Carta 2 vence ou empata\n");
+  }
 
-    return 0;
+  if (area1 > area2) {
+    printf("Area: Carta 1 vence\n");
+  } else {
+    printf("Area: Carta 2 vence ou empata\n");
+  }
+
+  if (pib1 > pib2) {
+    printf("PIB: Carta 1 vence\n");
+  } else {
+    printf("PIB: Carta 2 vence ou empata\n");
+  }
+
+  if (pontos1 > pontos2) {
+    printf("Pontos turisticos: Carta 1 vence\n");
+  } else {
+    printf("Pontos turisticos: Carta 2 vence ou empata\n");
+  }
+
+  if (dens1 < dens2) {
+    printf("Densidade: Carta 1 vence\n");
+  } else {
+    printf("Densidade: Carta 2 vence ou empata\n");
+  }
+
+  if (ppc1 > ppc2) {
+    printf("PIB per capita: Carta 1 vence\n");
+  } else {
+    printf("PIB per capita: Carta 2 vence ou empata\n");
+  }
+
+  if (super1 > super2) {
+    printf("Super poder: Carta 1 vence\n");
+  } else {
+    printf("Super poder: Carta 2 vence ou empata\n");
+  }
+
+  return 0;
 }
-
-return 0;
-} 

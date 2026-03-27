@@ -172,11 +172,17 @@ int main() {
   printf("C1: %.2lf | C2: %.2lf\n", super1, super2);
 
   if (super1 > super2)
-  printf("Carta 1 venceu!\n");
+  printf("=============================\n");
+  printf("=======Carta 1 venceu!=======\n");
+  printf("=============================\n");
   else if (super2 > super1)
-  printf("Carta 2 venceu!\n");
+  printf("=============================\n");
+  printf("=======Carta 2 venceu!=======\n");
+  printf("=============================\n");
   else
-  printf("Empate!\n");
+  printf("=============================\n");
+  printf("============Empate!==========\n");
+  printf("=============================\n");
   break;
 
   default:

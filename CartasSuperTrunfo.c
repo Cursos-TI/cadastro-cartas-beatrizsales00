@@ -20,55 +20,88 @@ int main() {
     double v1_c1, v1_c2;
     double v2_c1, v2_c2;
 
-    // ================= CADASTRO =================
-    printf("=== CARTA 1 ===\n");
+    // ================= CARTA 1 =================
+    printf("=== CADASTRO CARTA 1 ===\n");
 
-    scanf("%d", &carta1); getchar();
+    printf("Numero: ");
+    scanf("%d", &carta1);
+    getchar();
+
+    printf("Estado: ");
     fgets(estado1, 50, stdin);
     estado1[strcspn(estado1, "\n")] = '\0';
 
+    printf("Cidade: ");
     fgets(cidade1, 50, stdin);
     cidade1[strcspn(cidade1, "\n")] = '\0';
 
+    printf("Populacao: ");
     scanf("%lu", &populacao1);
+
+    printf("Area: ");
     scanf("%f", &area1);
+
+    printf("PIB: ");
     scanf("%lf", &pib1);
+
+    printf("Pontos turisticos: ");
     scanf("%d", &pontos1);
 
     dens1 = populacao1 / area1;
     ppc1 = pib1 / populacao1;
 
-    printf("\n=== CARTA 2 ===\n");
+    // ================= CARTA 2 =================
+    printf("\n=== CADASTRO CARTA 2 ===\n");
 
-    scanf("%d", &carta2); getchar();
+    printf("Numero: ");
+    scanf("%d", &carta2);
+    getchar();
+
+    printf("Estado: ");
     fgets(estado2, 50, stdin);
     estado2[strcspn(estado2, "\n")] = '\0';
 
+    printf("Cidade: ");
     fgets(cidade2, 50, stdin);
     cidade2[strcspn(cidade2, "\n")] = '\0';
 
+    printf("Populacao: ");
     scanf("%lu", &populacao2);
+
+    printf("Area: ");
     scanf("%f", &area2);
+
+    printf("PIB: ");
     scanf("%lf", &pib2);
+
+    printf("Pontos turisticos: ");
     scanf("%d", &pontos2);
 
     dens2 = populacao2 / area2;
     ppc2 = pib2 / populacao2;
 
     // ================= MENU =================
-    printf("\nEscolha o 1º atributo:\n");
-    printf("1-Populacao 2-Area 3-PIB 4-Turismo 5-Densidade 6-PPC\n");
+    printf("\n=== ESCOLHA DOS ATRIBUTOS ===\n");
+
+    printf("1 - Populacao\n");
+    printf("2 - Area\n");
+    printf("3 - PIB\n");
+    printf("4 - Pontos turisticos\n");
+    printf("5 - Densidade\n");
+    printf("6 - PIB per capita\n");
+
+    printf("Escolha o 1º atributo: ");
     scanf("%d", &op1);
 
-    printf("\nEscolha o 2º atributo (diferente):\n");
+    printf("Escolha o 2º atributo (diferente): ");
     scanf("%d", &op2);
 
     if (op1 == op2) {
-        printf("Erro: atributos iguais!\n");
+        printf("\nErro: atributos iguais!\n");
         return 0;
     }
 
-    // ================= ATRIBUTO 1 =================
+    // ================= ATRIBUTOS =================
     switch (op1) {
         case 1: v1_c1 = populacao1; v1_c2 = populacao2; break;
         case 2: v1_c1 = area1; v1_c2 = area2; break;
@@ -79,7 +112,6 @@ int main() {
         default: printf("Opcao invalida\n"); return 0;
     }
 
-    // ================= ATRIBUTO 2 =================
     switch (op2) {
         case 1: v2_c1 = populacao1; v2_c2 = populacao2; break;
         case 2: v2_c1 = area1; v2_c2 = area2; break;
@@ -95,11 +127,15 @@ int main() {
     double soma2 = v1_c2 + v2_c2;
 
     // ================= RESULTADO =================
-    printf("\nCarta 1: %s - %s\n", estado1, cidade1);
+    printf("\n============================\n");
+    printf("RESULTADO FINAL\n");
+    printf("============================\n");
+
+    printf("Carta 1: %s - %s\n", estado1, cidade1);
     printf("Carta 2: %s - %s\n", estado2, cidade2);
 
-    printf("\nSoma C1: %.2lf", soma1);
-    printf("\nSoma C2: %.2lf\n", soma2);
+    printf("\nSoma Carta 1: %.2lf", soma1);
+    printf("\nSoma Carta 2: %.2lf\n", soma2);
 
     if (soma1 != soma2) {
         if (soma1 > soma2) {
